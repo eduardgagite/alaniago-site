@@ -50,7 +50,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-20 bg-gradient-to-b from-alania-dark to-alania-dark/95 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-alania-dark to-alania-dark/95 relative overflow-hidden"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -63,30 +63,30 @@ export default function ServicesSection() {
         <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-alania-amber/40 rounded-full animate-bounce-subtle animate-delay-300"></div>
       </div>
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 animate-slide-in-up">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 animate-slide-in-up">
             Наши <span className="gradient-text">услуги</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-slide-in-up animate-delay-200">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4 animate-slide-in-up animate-delay-200">
             Мы предлагаем широкий спектр IT услуг для решения ваших бизнес-задач
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className={`bg-white/5 backdrop-blur-sm rounded-lg p-6 hover:bg-white/10 transition-all duration-500 border border-white/10 hover:translate-y-[-10px] hover:scale-105 gradient-border group animate-slide-in-up ${animationDelays[index]} hover:shadow-2xl hover:shadow-alania-orange/20`}
+              className={`bg-white/5 backdrop-blur-sm rounded-lg p-4 sm:p-5 md:p-6 hover:bg-white/10 transition-all duration-500 border border-white/10 hover:translate-y-[-5px] sm:hover:translate-y-[-10px] hover:scale-[1.02] sm:hover:scale-105 gradient-border group animate-slide-in-up ${animationDelays[index]} hover:shadow-2xl hover:shadow-alania-orange/20`}
             >
-              <div className="mb-4 relative">
+              <div className="mb-3 sm:mb-4 relative">
                 <div className="absolute inset-0 bg-alania-orange/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative group-hover:animate-float">{service.icon}</div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 group-hover:text-alania-orange transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-alania-orange transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
                 {service.description}
               </p>
 

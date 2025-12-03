@@ -46,7 +46,7 @@ const approachDelays = ["animate-delay-200", "animate-delay-400", "animate-delay
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 bg-alania-dark relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-alania-dark relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 border border-alania-orange/5 rounded-full animate-pulse"></div>
@@ -55,43 +55,43 @@ export default function AboutSection() {
         <div className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-alania-amber/20 rounded-full animate-bounce-subtle animate-delay-500"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6 animate-slide-in-up">
+          <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 animate-slide-in-up">
               О <span className="gradient-text">компании</span>
             </h2>
-            <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8 animate-slide-in-up animate-delay-200">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 px-4 animate-slide-in-up animate-delay-200">
               Alania GO — команда опытных разработчиков, специализирующаяся на создании веб-сайтов, программного
               обеспечения и Telegram-ботов. Мы работаем удаленно с клиентами по всей России, предлагая качественные
               IT-решения по доступным ценам.
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto animate-slide-in-up animate-delay-400">
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto px-4 animate-slide-in-up animate-delay-400">
               Наша цель — превратить ваши идеи в работающие продукты, которые приносят реальную пользу вашему бизнесу.
             </p>
           </div>
 
           {/* Why Choose Us */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-center mb-12 animate-slide-in-up">
+          <div className="mb-12 sm:mb-16 md:mb-20">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-8 sm:mb-10 md:mb-12 animate-slide-in-up">
               Почему выбирают <span className="gradient-text">нас</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`group p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-alania-orange/30 transition-all duration-500 hover:scale-105 hover:translate-y-[-5px] animate-slide-in-up ${featureDelays[index]} hover:shadow-xl hover:shadow-alania-orange/10`}
+                  className={`group p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-alania-orange/30 transition-all duration-500 hover:scale-[1.02] sm:hover:scale-105 hover:translate-y-[-3px] sm:hover:translate-y-[-5px] animate-slide-in-up ${featureDelays[index]} hover:shadow-xl hover:shadow-alania-orange/10`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 p-3 rounded-xl bg-alania-orange/10 text-alania-orange group-hover:bg-alania-orange/20 group-hover:scale-110 group-hover:animate-pulse-glow transition-all duration-500">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="flex-shrink-0 p-2 sm:p-3 rounded-xl bg-alania-orange/10 text-alania-orange group-hover:bg-alania-orange/20 group-hover:scale-110 group-hover:animate-pulse-glow transition-all duration-500">
                       <div className="group-hover:animate-bounce-subtle">{feature.icon}</div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold mb-2 group-hover:text-alania-orange transition-colors duration-300">
+                      <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 group-hover:text-alania-orange transition-colors duration-300">
                         {feature.title}
                       </h4>
-                      <p className="text-gray-400 leading-relaxed text-sm group-hover:text-gray-300 transition-colors duration-300">
+                      <p className="text-gray-400 leading-relaxed text-xs sm:text-sm group-hover:text-gray-300 transition-colors duration-300">
                         {feature.description}
                       </p>
                     </div>
@@ -103,10 +103,10 @@ export default function AboutSection() {
 
           {/* Our Approach */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-8 animate-slide-in-up">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 animate-slide-in-up">
               Наш <span className="gradient-text">подход</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {[
                 {
                   number: "01",
@@ -129,15 +129,15 @@ export default function AboutSection() {
               ].map((step, index) => (
                 <div
                   key={index}
-                  className={`p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-alania-orange/30 transition-all duration-500 hover:scale-105 group animate-slide-in-up ${approachDelays[index]}`}
+                  className={`p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-alania-orange/30 transition-all duration-500 hover:scale-[1.02] sm:hover:scale-105 group animate-slide-in-up ${approachDelays[index]} sm:col-span-2 md:col-span-1 ${index === 2 ? 'sm:col-start-1 sm:col-end-3 md:col-start-auto md:col-end-auto' : ''}`}
                 >
-                  <div className="text-4xl font-bold gradient-text mb-4 group-hover:animate-bounce-subtle transition-all duration-300">
+                  <div className="text-3xl sm:text-4xl font-bold gradient-text mb-3 sm:mb-4 group-hover:animate-bounce-subtle transition-all duration-300">
                     {step.number}
                   </div>
-                  <h4 className="text-lg font-semibold mb-3 group-hover:text-alania-orange transition-colors duration-300">
+                  <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 group-hover:text-alania-orange transition-colors duration-300">
                     {step.title}
                   </h4>
-                  <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                     {step.description}
                   </p>
                 </div>

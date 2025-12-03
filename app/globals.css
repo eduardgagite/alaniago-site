@@ -169,8 +169,12 @@
   }
 
   /* Improve touch targets on mobile */
-  button {
+  button,
+  a[role="button"],
+  input[type="button"],
+  input[type="submit"] {
     min-height: 44px;
+    min-width: 44px;
   }
 
   /* Better spacing for mobile */
@@ -183,6 +187,16 @@
   .animate-bounce-subtle {
     animation-duration: 30s;
   }
+
+  /* Optimize text rendering on mobile */
+  body {
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
 }
 
 /* Ensure modal is properly sized on mobile */
@@ -190,7 +204,22 @@
   [data-radix-dialog-content] {
     width: 95vw !important;
     max-width: 95vw !important;
-    margin: 0 !important;
+    margin: 0.5rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Improve tap highlight on mobile */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: rgba(255, 85, 0, 0.1);
   }
 }
 
@@ -217,4 +246,43 @@
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   transform: translateZ(0);
+}
+
+/* Responsive image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid hsl(var(--alania-orange));
+  outline-offset: 2px;
+}
+
+/* Responsive typography utilities */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  h3 {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+  }
+}
+
+/* Prevent text overflow */
+.truncate-multiline {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

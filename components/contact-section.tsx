@@ -63,7 +63,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 bg-gradient-to-b from-alania-dark to-alania-dark/95 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-alania-dark to-alania-dark/95 relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -76,47 +76,47 @@ export default function ContactSection() {
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
             Свяжитесь с <span className="gradient-text">нами</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto px-4">
             Готовы обсудить ваш проект? Заполните форму, и мы свяжемся с вами в ближайшее время
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 gradient-border relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 max-w-7xl mx-auto">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 gradient-border relative overflow-hidden">
             {/* Form background decoration */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-orange opacity-5 rounded-full blur-2xl"></div>
 
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
                 <div className="p-2 bg-alania-orange/20 rounded-lg">
-                  <MessageCircle className="h-6 w-6 text-alania-orange" />
+                  <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-alania-orange" />
                 </div>
-                <h3 className="text-2xl font-bold">Напишите нам</h3>
+                <h3 className="text-xl sm:text-2xl font-bold">Напишите нам</h3>
               </div>
 
               {submitSuccess && (
-                <div className="bg-green-500/20 border border-green-500/50 rounded-lg p-4 mb-6">
-                  <p className="text-green-400">
+                <div className="bg-green-500/20 border border-green-500/50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+                  <p className="text-green-400 text-sm sm:text-base">
                     ✅ Спасибо за сообщение! Мы получили вашу заявку и свяжемся с вами в ближайшее время.
                   </p>
                 </div>
               )}
 
               {submitError && (
-                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-4 mb-6">
-                  <p className="text-red-400">❌ {submitError}</p>
+                <div className="bg-red-500/20 border border-red-500/50 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
+                  <p className="text-red-400 text-sm sm:text-base">❌ {submitError}</p>
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
+                    <label htmlFor="name" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-gray-300">
                       Ваше имя *
                     </label>
                     <Input
@@ -126,12 +126,12 @@ export default function ContactSection() {
                       onChange={handleChange}
                       placeholder="Иван Иванов"
                       required
-                      className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors"
+                      className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors text-sm sm:text-base min-h-[44px]"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2 text-gray-300">
+                    <label htmlFor="phone" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-gray-300">
                       Телефон
                     </label>
                     <Input
@@ -140,13 +140,13 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+7 (999) 123-45-67"
-                      className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors"
+                      className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors text-sm sm:text-base min-h-[44px]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
+                  <label htmlFor="email" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-gray-300">
                     Email *
                   </label>
                   <Input
@@ -157,12 +157,12 @@ export default function ContactSection() {
                     onChange={handleChange}
                     placeholder="example@mail.ru"
                     required
-                    className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors"
+                    className="bg-white/5 border-white/10 focus:border-alania-orange transition-colors text-sm sm:text-base min-h-[44px]"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
+                  <label htmlFor="message" className="block text-xs sm:text-sm font-medium mb-1.5 sm:mb-2 text-gray-300">
                     Сообщение *
                   </label>
                   <Textarea
@@ -172,14 +172,14 @@ export default function ContactSection() {
                     onChange={handleChange}
                     placeholder="Расскажите о вашем проекте..."
                     required
-                    className="bg-white/5 border-white/10 focus:border-alania-orange min-h-[120px] transition-colors resize-none"
+                    className="bg-white/5 border-white/10 focus:border-alania-orange min-h-[100px] sm:min-h-[120px] transition-colors resize-none text-sm sm:text-base"
                   />
                 </div>
 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-orange hover:opacity-90 transition-opacity text-white font-semibold py-3"
+                  className="w-full bg-gradient-orange hover:opacity-90 transition-opacity text-white font-semibold py-3 min-h-[48px] text-sm sm:text-base"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center">
@@ -216,54 +216,54 @@ export default function ContactSection() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold mb-8">Контактная информация</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8">Контактная информация</h3>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="bg-alania-orange/20 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-alania-orange" />
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="bg-alania-orange/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-alania-orange" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium mb-1">Email</h4>
-                  <a href="mailto:info@alania-go.ru" className="text-gray-300 hover:text-white transition-colors">
+                  <h4 className="text-base sm:text-lg font-medium mb-1">Email</h4>
+                  <a href="mailto:info@alania-go.ru" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all">
                     info@alania-go.ru
                   </a>
-                  <p className="text-sm text-gray-400 mt-1">Ответим в течение 2 часов</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">Ответим в течение 2 часов</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="bg-alania-orange/20 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-alania-orange" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="bg-alania-orange/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-alania-orange" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium mb-1">Телефон</h4>
-                  <a href="tel:+79991234567" className="text-gray-300 hover:text-white transition-colors">
+                  <h4 className="text-base sm:text-lg font-medium mb-1">Телефон</h4>
+                  <a href="tel:+79991234567" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">
                     +7 (999) 123-45-67
                   </a>
-                  <p className="text-sm text-gray-400 mt-1">Звоните с 9:00 до 18:00 МСК</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">Звоните с 9:00 до 18:00 МСК</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="bg-alania-orange/20 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-alania-orange" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="bg-alania-orange/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-alania-orange" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium mb-1">Местоположение</h4>
-                  <p className="text-gray-300">Удаленная работа</p>
-                  <p className="text-sm text-gray-400 mt-1">Работаем по всей России</p>
+                  <h4 className="text-base sm:text-lg font-medium mb-1">Местоположение</h4>
+                  <p className="text-sm sm:text-base text-gray-300">Удаленная работа</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">Работаем по всей России</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
-                <div className="bg-alania-orange/20 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-alania-orange" />
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-colors">
+                <div className="bg-alania-orange/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                  <Clock className="h-5 w-5 sm:h-6 sm:w-6 text-alania-orange" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium mb-1">Время работы</h4>
-                  <p className="text-gray-300">Пн-Пт: 9:00 - 18:00 МСК</p>
-                  <p className="text-sm text-gray-400 mt-1">Выходные: по договоренности</p>
+                  <h4 className="text-base sm:text-lg font-medium mb-1">Время работы</h4>
+                  <p className="text-sm sm:text-base text-gray-300">Пн-Пт: 9:00 - 18:00 МСК</p>
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">Выходные: по договоренности</p>
                 </div>
               </div>
             </div>

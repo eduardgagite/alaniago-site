@@ -30,8 +30,6 @@ const nextConfig = {
   },
   // React strict mode for better performance warnings
   reactStrictMode: true,
-  // Optimize bundle
-  swcMinify: true,
 }
 
 export default nextConfig
