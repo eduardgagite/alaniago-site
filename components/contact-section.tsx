@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react"
-import { sendTelegramMessage } from "@/app/actions/send-telegram"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -27,37 +26,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitError("")
-
-    try {
-      // Create FormData object
-      const formDataObj = new FormData()
-      formDataObj.append("name", formData.name)
-      formDataObj.append("email", formData.email)
-      formDataObj.append("phone", formData.phone)
-      formDataObj.append("message", formData.message)
-
-      // Call server action
-      const result = await sendTelegramMessage(formDataObj)
-
-      if (result.success) {
-        setSubmitSuccess(true)
-        setFormData({ name: "", email: "", phone: "", message: "" })
-
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitSuccess(false)
-        }, 5000)
-      } else {
-        setSubmitError(result.error || "Произошла ошибка при отправке сообщения")
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      setSubmitError("Произошла ошибка при отправке сообщения. Попробуйте еще раз или свяжитесь с нами напрямую.")
-    } finally {
-      setIsSubmitting(false)
-    }
+    // Form submission is disabled for now
   }
 
   return (
