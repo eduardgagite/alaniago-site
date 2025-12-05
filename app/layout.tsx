@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { WebVitals } from "./web-vitals"
+import { ServiceWorkerRegistration } from "@/components/service-worker-registration"
 
 const inter = Inter({ 
   subsets: ["latin", "cyrillic"],
@@ -72,8 +73,58 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" suppressHydrationWarning>
+      <head>
+        {/* Preload critical resources */}
+        <link
+          rel="preload"
+          href="/images/logo.png"
+          as="image"
+          type="image/png"
+          fetchPriority="high"
+        />
+        
+        {/* DNS Prefetch for external resources */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        
+        {/* Preconnect for critical origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preload critical CSS */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* Critical CSS for above-the-fold content */
+          .gradient-text {
+            background: linear-gradient(90deg, #FF5500 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+          }
+          .bg-gradient-orange {
+            background: linear-gradient(90deg, #FF5500 0%, #FFA500 100%);
+          }
+          .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, #FF5500, #FFA500);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s;
+          }
+          .gradient-border:hover::before {
+            opacity: 1;
+          }
+        ` }} />
+      </head>
       <body className={`${inter.className} bg-alania-dark text-white min-h-screen flex flex-col`}>
         <WebVitals />
+        <ServiceWorkerRegistration />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           <Header />
           <main className="flex-1">{children}</main>
