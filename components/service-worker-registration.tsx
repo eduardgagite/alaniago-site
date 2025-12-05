@@ -69,12 +69,36 @@ export function useServiceWorker() {
 
     const registration = await navigator.serviceWorker.ready
     
+    // Check if service worker is active before sending message
+    if (!registration.active) {
+      console.warn('[SW] No active service worker to clear cache')
+      return false
+    }
+    
     return new Promise<boolean>((resolve) => {
       const messageChannel = new MessageChannel()
+      
+      // Set timeout to prevent hanging indefinitely
+      const timeout = setTimeout(() => {
+        messageChannel.port1.close()
+        console.warn('[SW] Cache clear timeout')
+        resolve(false)
+      }, 5000) // 5 second timeout
+      
       messageChannel.port1.onmessage = (event) => {
-        resolve(event.data.cleared)
+        clearTimeout(timeout)
+        messageChannel.port1.close()
+        resolve(event.data.cleared ?? false)
       }
-      registration.active?.postMessage('clearCache', [messageChannel.port2])
+      
+      messageChannel.port1.onerror = () => {
+        clearTimeout(timeout)
+        messageChannel.port1.close()
+        console.error('[SW] Error clearing cache')
+        resolve(false)
+      }
+      
+      registration.active.postMessage('clearCache', [messageChannel.port2])
     })
   }, [])
 

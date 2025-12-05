@@ -44,7 +44,7 @@ export function OptimizedImage({
       loading={loading}
       onError={handleError}
       // Enable blur placeholder for better perceived performance
-      placeholder={props.placeholder || (typeof src === 'string' && src.endsWith('.png') ? 'empty' : 'empty')}
+      placeholder={props.placeholder || (typeof src === 'string' && src.endsWith('.png') ? 'blur' : 'empty')}
     />
   )
 }
