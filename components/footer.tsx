@@ -28,35 +28,34 @@ export default function Footer() {
         <div className="absolute bottom-20 left-20 text-alania-amber/10 font-mono text-sm">{"<dev />"}</div>
       </div>
 
-      <div className="container mx-auto py-10 sm:py-12 md:py-16 relative z-10">
+      <div className="container mx-auto py-8 md:py-12 relative z-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-8 mb-8 sm:mb-10 md:mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
             {/* Column 1: Company info */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <div className="flex flex-col space-y-3 sm:space-y-4">
+              <div className="flex flex-col space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="p-2 bg-gradient-orange rounded-lg">
-                    <Code className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+                  <div className="p-1.5 bg-gradient-orange rounded-lg">
+                    <Code className="h-4 w-4 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold gradient-text">Alania GO</h3>
+                  <h3 className="text-lg font-bold gradient-text">Alania GO</h3>
                 </div>
-                <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                  Команда талантливых разработчиков, создающая инновационные IT решения для вашего бизнеса. Мы
-                  превращаем идеи в качественные продукты.
+                <p className="text-xs sm:text-sm text-gray-400 leading-relaxed max-w-xs">
+                  Команда талантливых разработчиков, создающая инновационные IT решения для вашего бизнеса.
                 </p>
-                <div className="flex space-x-4">
+                <div className="flex space-x-3 pt-1">
                   <Link
                     href="https://t.me/alania_go"
-                    className="p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-alania-orange/20 hover:border-alania-orange/50 transition-all duration-300 group"
+                    className="p-2 bg-white/5 rounded-lg border border-white/10 hover:bg-alania-orange/20 hover:border-alania-orange/50 transition-all duration-300 group"
                   >
-                    <TelegramIcon className="h-5 w-5 text-gray-400 group-hover:text-alania-orange transition-colors" />
+                    <TelegramIcon className="h-4 w-4 text-gray-400 group-hover:text-alania-orange transition-colors" />
                     <span className="sr-only">Telegram</span>
                   </Link>
                   <Link
-                    href="https://wa.me/79991234567"
-                    className="p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-alania-orange/20 hover:border-alania-orange/50 transition-all duration-300 group"
+                    href="https://wa.me/79064946024"
+                    className="p-2 bg-white/5 rounded-lg border border-white/10 hover:bg-alania-orange/20 hover:border-alania-orange/50 transition-all duration-300 group"
                   >
-                    <WhatsAppIcon className="h-5 w-5 text-gray-400 group-hover:text-alania-orange transition-colors" />
+                    <WhatsAppIcon className="h-4 w-4 text-gray-400 group-hover:text-alania-orange transition-colors" />
                     <span className="sr-only">WhatsApp</span>
                   </Link>
                 </div>
@@ -65,43 +64,42 @@ export default function Footer() {
 
             {/* Column 2: Services */}
             <div>
-              <div className="flex flex-col space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-semibold gradient-text flex items-center gap-2">
-                  <Code className="h-4 w-4 sm:h-5 sm:w-5" />
+              <div className="flex flex-col space-y-3">
+                <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider flex items-center gap-2">
                   Услуги
                 </h3>
-                <div className="flex flex-col space-y-2 sm:space-y-3">
+                <div className="flex flex-col space-y-2">
                   <Link
                     href="#services"
-                    className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     Разработка ПО
                   </Link>
                   <Link
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     Веб-сайты
                   </Link>
                   <Link
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     Telegram боты
                   </Link>
                   <Link
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     Мобильные приложения
                   </Link>
                   <Link
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     Техподдержка
@@ -112,22 +110,22 @@ export default function Footer() {
 
             {/* Column 3: Navigation */}
             <div>
-              <div className="flex flex-col space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-semibold gradient-text">Навигация</h3>
-                <div className="flex flex-col space-y-2 sm:space-y-3">
-                  <Link href="#home" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+              <div className="flex flex-col space-y-3">
+                <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">Навигация</h3>
+                <div className="flex flex-col space-y-2">
+                  <Link href="#home" className="text-sm text-gray-400 hover:text-white transition-colors">
                     Главная
                   </Link>
-                  <Link href="#services" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                  <Link href="#services" className="text-sm text-gray-400 hover:text-white transition-colors">
                     Услуги
                   </Link>
-                  <Link href="#about" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                  <Link href="#about" className="text-sm text-gray-400 hover:text-white transition-colors">
                     О нас
                   </Link>
-                  <Link href="#projects" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                  <Link href="#projects" className="text-sm text-gray-400 hover:text-white transition-colors">
                     Проекты
                   </Link>
-                  <Link href="#contact" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                  <Link href="#contact" className="text-sm text-gray-400 hover:text-white transition-colors">
                     Контакты
                   </Link>
                 </div>
@@ -136,32 +134,31 @@ export default function Footer() {
 
             {/* Column 4: Contact info */}
             <div>
-              <div className="flex flex-col space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-semibold gradient-text flex items-center gap-2">
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
+              <div className="flex flex-col space-y-3">
+                <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">
                   Контакты
                 </h3>
-                <div className="flex flex-col space-y-3 sm:space-y-4">
-                  <div className="flex items-start gap-2 sm:gap-3">
-                    <Mail className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-alania-orange mt-1 flex-shrink-0" />
+                <div className="flex flex-col space-y-3">
+                  <div className="flex items-start gap-2">
+                    <Mail className="h-4 w-4 text-alania-orange mt-0.5 flex-shrink-0" />
                     <a
-                      href="mailto:info@alania-go.ru"
-                      className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm break-all"
+                      href="mailto:eduardgagite@gmail.com"
+                      className="text-gray-400 hover:text-white transition-colors text-sm break-all"
                     >
-                      info@alania-go.ru
+                      eduardgagite@gmail.com
                     </a>
                   </div>
-                  <div className="flex items-start gap-2 sm:gap-3">
-                    <Phone className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-alania-orange mt-1 flex-shrink-0" />
-                    <a href="tel:+79991234567" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
-                      +7 (999) 123-45-67
+                  <div className="flex items-start gap-2">
+                    <Phone className="h-4 w-4 text-alania-orange mt-0.5 flex-shrink-0" />
+                    <a href="tel:+79064946024" className="text-gray-400 hover:text-white transition-colors text-sm">
+                      +7 (906) 494-60-24
                     </a>
                   </div>
-                  <div className="flex items-start gap-2 sm:gap-3">
-                    <MapPin className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-alania-orange mt-1 flex-shrink-0" />
+                  <div className="flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-alania-orange mt-0.5 flex-shrink-0" />
                     <div>
-                      <span className="text-gray-400 text-xs sm:text-sm">Удаленная работа</span>
-                      <div className="text-xs text-gray-500">по всей России</div>
+                      <span className="text-gray-400 text-sm block">Удаленная работа</span>
+                      <span className="text-xs text-gray-500">по всей России</span>
                     </div>
                   </div>
                 </div>
@@ -170,33 +167,35 @@ export default function Footer() {
 
             {/* Column 5: Additional */}
             <div>
-              <div className="flex flex-col space-y-3 sm:space-y-4">
-                <h3 className="text-base sm:text-lg font-semibold gradient-text">Дополнительно</h3>
-                <div className="flex flex-col space-y-2 sm:space-y-3">
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
+              <div className="flex flex-col space-y-3">
+                <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">Дополнительно</h3>
+                <div className="flex flex-col space-y-2">
+                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Политика конфиденциальности
                   </Link>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
+                  <Link href="#" className="text-gray-400 hover:text-white transition-colors text-sm">
                     Условия использования
                   </Link>
-                  <Button
-                    onClick={scrollToTop}
-                    variant="outline"
-                    size="sm"
-                    className="border-alania-orange/50 hover:bg-alania-orange/10 text-alania-orange hover:text-alania-orange bg-transparent w-fit text-xs sm:text-sm min-h-[36px] sm:min-h-[40px]"
-                  >
-                    <ArrowUp className="h-3 w-3 sm:h-4 sm:w-4" />
-                    Наверх
-                  </Button>
+                  <div className="pt-2">
+                    <Button
+                      onClick={scrollToTop}
+                      variant="outline"
+                      size="sm"
+                      className="border-alania-orange/50 hover:bg-alania-orange/10 text-alania-orange hover:text-alania-orange bg-transparent w-full sm:w-auto text-xs h-9 px-3"
+                    >
+                      <ArrowUp className="h-3 w-3 mr-2" />
+                      Наверх
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom section */}
-          <div className="border-t border-white/10 pt-6 sm:pt-8">
+          <div className="border-t border-white/10 pt-6">
             <div className="text-center">
-              <p className="text-gray-400 text-xs sm:text-sm">&copy; {new Date().getFullYear()} Alania GO. Все права защищены.</p>
+              <p className="text-gray-500 text-xs">&copy; {new Date().getFullYear()} Alania GO. Все права защищены.</p>
             </div>
           </div>
         </div>

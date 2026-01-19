@@ -214,8 +214,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-base sm:text-lg font-medium mb-1 group-hover:text-alania-orange transition-colors duration-300">Email</h4>
-                  <a href="mailto:info@alania-go.ru" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all">
-                    info@alania-go.ru
+                  <a href="mailto:eduardgagite@gmail.com" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all">
+                    eduardgagite@gmail.com
                   </a>
                   <p className="text-xs sm:text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors duration-300">Ответим в течение 2 часов</p>
                 </div>
@@ -227,8 +227,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-base sm:text-lg font-medium mb-1 group-hover:text-alania-orange transition-colors duration-300">Телефон</h4>
-                  <a href="tel:+79991234567" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">
-                    +7 (999) 123-45-67
+                  <a href="tel:+79064946024" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">
+                    +7 (906) 494-60-24
                   </a>
                   <p className="text-xs sm:text-sm text-gray-400 mt-1 group-hover:text-gray-300 transition-colors duration-300">Звоните с 9:00 до 18:00 МСК</p>
                 </div>
