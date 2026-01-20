@@ -28,7 +28,52 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission is disabled for now
+    setIsSubmitting(true)
+    setSubmitSuccess(false)
+    setSubmitError("")
+
+    // URL вебхука берется из переменных окружения
+    const WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
+
+    if (!WEBHOOK_URL) {
+      console.error("Webhook URL is not defined in environment variables")
+      setSubmitError("Ошибка конфигурации. Свяжитесь с администратором.")
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      // Используем mode: 'no-cors' и Content-Type: 'text/plain' для избежания CORS ошибок (preflight requests)
+      // N8N должен быть настроен на прием JSON или text body. 
+      // При no-cors мы не можем узнать статус ответа (ok/error), поэтому считаем отправку успешной, если не было сетевой ошибки.
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors", 
+        headers: {
+          "Content-Type": "text/plain",
+        },
+        body: JSON.stringify({
+          ...formData,
+          submittedAt: new Date().toISOString(),
+          source: window.location.href,
+        }),
+      })
+
+      setSubmitSuccess(true)
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      })
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setSubmitError(
+        `Ошибка при отправке: ${error instanceof Error ? error.message : "Проверьте соединение или настройки"}`
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
