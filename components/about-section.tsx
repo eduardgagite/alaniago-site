@@ -2,6 +2,7 @@
 
 import { Code, Users, Zap, Award, Target, CheckCircle, type LucideIcon } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
+import { CardSpotlight } from "@/components/ui/card-spotlight"
 
 interface Feature {
   Icon: LucideIcon
@@ -126,28 +127,29 @@ export default function AboutSection() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className={`group p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-500 ${
+                  className={`h-full transition-all duration-700 ${
                     featuresVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  } hover:bg-white/10 hover:border-alania-orange/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-alania-orange/10`}
+                  }`}
                   style={{ transitionDelay: featuresVisible ? `${index * 80}ms` : "0ms" }}
                 >
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="flex-shrink-0 p-2 sm:p-3 rounded-xl bg-alania-orange/10 text-alania-orange relative overflow-hidden transition-all duration-500 group-hover:bg-alania-orange/20 group-hover:scale-110">
-                      <div className="absolute inset-0 bg-alania-orange/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <feature.Icon className="h-6 w-6 relative transition-transform duration-300 group-hover:scale-110" />
+                  <CardSpotlight
+                    className="h-full p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 group transition-all duration-300 hover:bg-white/10 hover:border-alania-orange/30 hover:-translate-y-1 hover:shadow-xl hover:shadow-alania-orange/10"
+                  >
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex-shrink-0 p-2 sm:p-3 rounded-xl bg-alania-orange/10 text-alania-orange relative overflow-hidden transition-all duration-500 group-hover:bg-alania-orange/20 group-hover:scale-110">
+                        <div className="absolute inset-0 bg-alania-orange/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <feature.Icon className="h-6 w-6 relative transition-transform duration-300 group-hover:scale-110" />
+                      </div>
+                      <div>
+                        <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 group-hover:text-alania-orange transition-colors duration-300">
+                          {feature.title}
+                        </h4>
+                        <p className="text-gray-400 leading-relaxed text-xs sm:text-sm group-hover:text-gray-300 transition-colors duration-300">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 group-hover:text-alania-orange transition-colors duration-300">
-                        {feature.title}
-                      </h4>
-                      <p className="text-gray-400 leading-relaxed text-xs sm:text-sm group-hover:text-gray-300 transition-colors duration-300">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
+                  </CardSpotlight>
                 </div>
               ))}
             </div>
@@ -166,28 +168,29 @@ export default function AboutSection() {
               {steps.map((step, index) => (
                 <div
                   key={index}
-                  className={`p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 relative overflow-hidden transition-all duration-500 group ${
+                  className={`relative transition-all duration-700 sm:col-span-2 md:col-span-1 ${
                     stepsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  } hover:bg-white/10 hover:border-alania-orange/30 hover:-translate-y-1 sm:col-span-2 md:col-span-1 ${index === 2 ? 'sm:col-start-1 sm:col-end-3 md:col-start-auto md:col-end-auto' : ''}`}
+                  } ${index === 2 ? 'sm:col-start-1 sm:col-end-3 md:col-start-auto md:col-end-auto' : ''}`}
                   style={{ transitionDelay: stepsVisible ? `${index * 150}ms` : "0ms" }}
                 >
-                  {/* Number with animated gradient */}
-                  <div className="text-3xl sm:text-4xl font-bold gradient-text mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110">
-                    {step.number}
-                  </div>
-                  <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 group-hover:text-alania-orange transition-colors duration-300">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-400 text-xs sm:text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    {step.description}
-                  </p>
-                  
-                  {/* Corner decoration */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-alania-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-2xl"></div>
+                  <CardSpotlight
+                    className="h-full p-4 sm:p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 group transition-all duration-300 hover:bg-white/10 hover:border-alania-orange/30 hover:-translate-y-1"
+                  >
+                    {/* Number with animated gradient */}
+                    <div className="text-3xl sm:text-4xl font-bold gradient-text mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-110">
+                      {step.number}
+                    </div>
+                    <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 group-hover:text-alania-orange transition-colors duration-300">
+                      {step.title}
+                    </h4>
+                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                      {step.description}
+                    </p>
+                  </CardSpotlight>
                   
                   {/* Progress line connector (hidden on mobile) */}
                   {index < 2 && (
-                    <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-alania-orange/30 to-transparent"></div>
+                    <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-alania-orange/30 to-transparent z-0"></div>
                   )}
                 </div>
               ))}
