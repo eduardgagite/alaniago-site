@@ -24,9 +24,9 @@ export default function Footer() {
 
       <div className="container mx-auto py-8 md:py-12 relative z-10">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-x-8 gap-y-10 mb-8">
+          <div className="grid grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-10 mb-8">
             {/* Column 1: Company info - Full width on mobile */}
-            <div className="col-span-2 lg:col-span-1">
+            <div className="col-span-2 lg:col-span-3">
               <div className="flex flex-col space-y-4">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-gradient-orange rounded-lg">
@@ -57,7 +57,7 @@ export default function Footer() {
             </div>
 
             {/* Column 2: Services */}
-            <div className="col-span-1">
+            <div className="col-span-1 lg:col-span-2">
               <div className="flex flex-col space-y-4">
                 <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider flex items-center gap-2">
                   Услуги
@@ -65,37 +65,37 @@ export default function Footer() {
                 <div className="flex flex-col space-y-2.5">
                   <Link
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors block relative group pl-0"
                   >
-                    <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="absolute -left-4 top-1.5 w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     Разработка ПО
                   </Link>
                   <Link
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors block relative group pl-0"
                   >
-                    <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="absolute -left-4 top-1.5 w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     Веб-сайты
                   </Link>
                   <Link
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors block relative group pl-0"
                   >
-                    <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="absolute -left-4 top-1.5 w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     Telegram боты
                   </Link>
                   <Link
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors block relative group pl-0"
                   >
-                    <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="absolute -left-4 top-1.5 w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     Мобильные приложения
                   </Link>
                   <Link
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2 group"
+                    className="text-sm text-gray-400 hover:text-white transition-colors block relative group pl-0"
                   >
-                    <div className="w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <span className="absolute -left-4 top-1.5 w-1 h-1 bg-alania-orange rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     Техподдержка
                   </Link>
                 </div>
@@ -103,7 +103,7 @@ export default function Footer() {
             </div>
 
             {/* Column 3: Navigation */}
-            <div className="col-span-1">
+            <div className="col-span-1 lg:col-span-2">
               <div className="flex flex-col space-y-4">
                 <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">Навигация</h3>
                 <div className="flex flex-col space-y-2.5">
@@ -127,7 +127,7 @@ export default function Footer() {
             </div>
 
             {/* Column 4: Contact info - Full width on mobile */}
-            <div className="col-span-2 md:col-span-1 lg:col-span-1">
+            <div className="col-span-2 md:col-span-1 lg:col-span-3">
               <div className="flex flex-col space-y-4">
                 <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">
                   Контакты
@@ -160,7 +160,7 @@ export default function Footer() {
             </div>
 
             {/* Column 5: Additional - Full width on mobile */}
-            <div className="col-span-2 md:col-span-1 lg:col-span-1">
+            <div className="col-span-2 md:col-span-1 lg:col-span-2">
               <div className="flex flex-col space-y-4">
                 <h3 className="text-sm font-semibold gradient-text uppercase tracking-wider">Дополнительно</h3>
                 <div className="flex flex-col space-y-2.5">
@@ -189,7 +189,7 @@ export default function Footer() {
           {/* Bottom section */}
           <div className="border-t border-white/10 pt-6">
             <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4">
-              <p className="text-gray-500 text-xs text-center md:text-left">
+              <p className="text-gray-500 text-xs text-center md:text-left" suppressHydrationWarning>
                 &copy; {new Date().getFullYear()} Alania GO. Все права защищены.
               </p>
               <p className="text-gray-600 text-[10px] text-center md:text-right font-mono">

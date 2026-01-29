@@ -2,6 +2,7 @@
 
 import { Code, Globe, Bot, Settings, Smartphone, Cpu, type LucideIcon } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
+import { CardSpotlight } from "@/components/ui/card-spotlight"
 
 interface ServiceItem {
   Icon: LucideIcon
@@ -89,32 +90,30 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`relative bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 group overflow-hidden transition-all duration-500 ${
+              className={`h-full transition-all duration-700 ${
                 isVisible 
                   ? "opacity-100 translate-y-0" 
                   : "opacity-0 translate-y-8"
-              } hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-alania-orange/15 hover:border-alania-orange/30`}
+              }`}
               style={{ transitionDelay: isVisible ? `${index * 100}ms` : "0ms" }}
             >
-              {/* Icon with glow effect */}
-              <div className="mb-3 sm:mb-4 relative">
-                <div className="absolute -inset-3 bg-alania-orange/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <service.Icon className="h-10 w-10 text-alania-orange relative transition-all duration-300 group-hover:scale-110 group-hover:text-alania-amber" />
-              </div>
-              
-              {/* Content */}
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-alania-orange transition-colors duration-300">
-                {service.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
-                {service.description}
-              </p>
-
-              {/* Shimmer effect on hover */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none"></div>
-              
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-alania-orange/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-tr-xl"></div>
+              <CardSpotlight
+                className="h-full bg-white/5 backdrop-blur-sm rounded-xl p-4 sm:p-5 md:p-6 border border-white/10 group transition-all duration-300 hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-alania-orange/15 hover:border-alania-orange/30"
+              >
+                {/* Icon with glow effect */}
+                <div className="mb-3 sm:mb-4 relative">
+                  <div className="absolute -inset-3 bg-alania-orange/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <service.Icon className="h-10 w-10 text-alania-orange relative transition-all duration-300 group-hover:scale-110 group-hover:text-alania-amber" />
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-alania-orange transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
+                  {service.description}
+                </p>
+              </CardSpotlight>
             </div>
           ))}
         </div>
